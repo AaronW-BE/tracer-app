@@ -36,8 +36,8 @@ public class TracerService extends Service implements ITracer {
 
                     EventBus.getDefault().post(aMapLocation);
                 } else {
-                    log("location error", aMapLocation.getErrorInfo());
-                    log("error code" + aMapLocation.getErrorCode());
+                    log("location error: ", aMapLocation.getErrorInfo());
+                    log("error code: " + aMapLocation.getErrorCode());
                 }
             } else {
                 log("定位无数据");
