@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        debug {
-            storeFile file('D:\\SDKs\\AndroidSDK\\keystore\\debug.jks')
-            keyPassword 'wangbin'
+        release {
+            storeFile file('D:\\SDKs\\AndroidSDK\\keystore\\release.jks')
             storePassword 'wangbin'
             keyAlias 'key0'
+            keyPassword 'wangbin'
         }
     }
     compileSdkVersion 30
@@ -26,6 +26,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
         }
     }
 }
